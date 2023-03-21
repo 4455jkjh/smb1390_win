@@ -2,3 +2,4 @@
 ARM64
 X64
 Win32
+*.user

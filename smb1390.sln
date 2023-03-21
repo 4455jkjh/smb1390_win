@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 12.0
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smb1390", "smb1390.vcxproj", "{49F35704-9A04-4CCF-A290-BBE79906C901}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM64 = Debug|ARM64
+		Debug|Win32 = Debug|Win32
+		Release|ARM64 = Release|ARM64
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Debug|ARM64.ActiveCfg = Debug|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Debug|ARM64.Build.0 = Debug|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Debug|ARM64.Deploy.0 = Debug|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Debug|Win32.ActiveCfg = Debug|Win32
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Debug|Win32.Build.0 = Debug|Win32
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Release|ARM64.ActiveCfg = Release|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Release|ARM64.Build.0 = Release|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Release|ARM64.Deploy.0 = Release|ARM64
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Release|Win32.ActiveCfg = Release|Win32
+		{49F35704-9A04-4CCF-A290-BBE79906C901}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A51F5BD7-0ACC-4A3A-B6AB-37A503ED68BD}
+	EndGlobalSection
+EndGlobal
