@@ -1,0 +1,76 @@
+;
+; smb1390.inf
+;
+
+[Version]
+Signature="$WINDOWS NT$"
+Class=System 
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: specify appropriate ClassGuid
+Provider=%ManufacturerName%
+CatalogFile=smb1390.cat
+DriverVer=
+PnpLockdown=1
+
+[DestinationDirs]
+DefaultDestDir = 12
+smb1390_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+smb1390.sys  = 1,,
+
+;*****************************************
+; Install Section
+;*****************************************
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$
+
+[Standard.NT$ARCH$]
+%smb1390.DeviceDesc%=smb1390_Device, ACPI\SMB1390
+
+[smb1390_Device.NT]
+CopyFiles=Drivers_Dir
+
+[Drivers_Dir]
+smb1390.sys
+
+;-------------- Service installation
+[smb1390_Device.NT.Services]
+AddService = smb1390,%SPSVCINST_ASSOCSERVICE%, smb1390_Service_Inst
+
+; -------------- smb1390 driver install sections
+[smb1390_Service_Inst]
+DisplayName    = %smb1390.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\smb1390.sys
+
+;
+;--- smb1390_Device Coinstaller installation ------
+;
+
+[smb1390_Device.NT.CoInstallers]
+AddReg=smb1390_Device_CoInstaller_AddReg
+CopyFiles=smb1390_Device_CoInstaller_CopyFiles
+
+[smb1390_Device_CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll,WdfCoInstaller"
+
+[smb1390_Device_CoInstaller_CopyFiles]
+WdfCoInstaller$KMDFCOINSTALLERVERSION$.dll
+
+[smb1390_Device.NT.Wdf]
+KmdfService =  smb1390, smb1390_wdfsect
+[smb1390_wdfsect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+[Strings]
+SPSVCINST_ASSOCSERVICE= 0x00000002
+ManufacturerName="Xiaomi"
+DiskName = "smb1390 Installation Disk"
+smb1390.DeviceDesc = "smb1390 Device"
+smb1390.SVCDESC = "smb1390 Service"
