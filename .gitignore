@@ -3,3 +3,5 @@ ARM64
 X64
 Win32
 *.user
+smb1390/ARM64
+amb1390/x64
